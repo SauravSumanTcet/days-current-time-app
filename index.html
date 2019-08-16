@@ -1,0 +1,54 @@
+<style>
+    html,
+    body {
+        margin: 0;
+    }
+
+    .top-bar {
+        padding: 0.5px 10px;
+        background: dodgerblue;
+        color: white;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    .main {
+        padding: 0 10px;
+    }
+
+    #week-days li {
+        margin: 10px 0;
+    }
+    #week-days li a{
+        padding: 5px 2px;
+        color: dodgerblue;
+        text-decoration: none;
+    }
+    #week-days li a:hover{
+        color: white;
+        background: dodgerblue;
+    }
+</style>
+<div class="top-bar">
+    <h1>Homepage</h1>
+</div>
+
+<div class="main">
+    <p>Days of the week :</p>
+
+    <ul id="week-days">
+    </ul>
+</div>
+
+<script>
+    const daysArr = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+    let daysListHtml = '';
+
+    daysArr.forEach(d => {
+        daysListHtml += `<li><a href="${d}">${d.charAt(0).toUpperCase()+d.slice(1)}</li></a>`
+    });
+
+    document.getElementById('week-days').innerHTML = daysListHtml;
+</script>

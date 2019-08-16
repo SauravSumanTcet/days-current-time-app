@@ -1,0 +1,49 @@
+<style>
+    html,
+    body {
+        margin: 0;
+    }
+
+    .card {
+        margin: 10% 25%;
+        padding: 10px;
+        transform: translateX(25%);
+        border: 1px solid dodgerblue;
+        width: 300px;
+        height: 200px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        font-size: 1.2em;
+    }
+
+    .selected {
+        background: dodgerblue;
+        color: white;
+        padding: 0 10px;
+        min-width: 80px;
+        max-width: 80px;
+    }
+</style>
+<script>
+    window.onload = () => {
+        var time = new Date();
+        document.getElementById('current-time').innerHTML = time.getHours() + ':' + time.getMinutes();
+
+        var day = location.pathname.split('/')[1];
+        document.getElementById('day-selected').innerHTML = day.charAt(0).toUpperCase() + day.slice(1);
+    }
+</script>
+<div class="card">
+    <div class="row">
+        <span>Route Clicked </span>
+        <span id="day-selected" class="selected"></span>
+    </div>
+    <div class="row">
+        <span>Current time </span>
+        <span id="current-time" class="selected"></span>
+    </div>
+</div>
